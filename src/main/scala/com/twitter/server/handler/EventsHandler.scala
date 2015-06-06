@@ -65,8 +65,8 @@ private object EventsHandler {
     if (e.longVal == Event.NoLong) "" else e.longVal.toString,
     if (e.objectVal == Event.NoObject) "" else showObject(e.objectVal),
     if (e.doubleVal == Event.NoDouble) "" else e.doubleVal.toString,
-    if (e.traceIdVal == Event.NoTraceId) "" else SpanId.toString(e.traceIdVal),
-    if (e.spanIdVal == Event.NoSpanId) "" else SpanId.toString(e.spanIdVal)
+    if (e.traceIdVal == Event.NoTraceId) "" else (e.traceIdVal),
+    if (e.spanIdVal == Event.NoSpanId) "" else e.spanIdVal
   ).mkString("<tr><td>", "</td><td>", "</td></tr>"))
 
   def newline(buf: Buf): Buf = buf.concat(Buf.Utf8("\n"))
